@@ -106,11 +106,17 @@ namespace DotNetShipping.ShippingProviders
                         }
                     }
 
+                    string zipDestination = Shipment.DestinationAddress.PostalCode;
+                    if (zipDestination.Contains('-'))
+                        zipDestination = zipDestination.Substring(0, zipDestination.IndexOf('-'));
+                    if (zipDestination.Length > 5)
+                        zipDestination = zipDestination.Substring(0, 5);
+
                     writer.WriteStartElement("Package");
                     writer.WriteAttributeString("ID", i.ToString());
                     writer.WriteElementString("Service", _service);
                     writer.WriteElementString("ZipOrigination", Shipment.OriginAddress.PostalCode);
-                    writer.WriteElementString("ZipDestination", Shipment.DestinationAddress.PostalCode);
+                    writer.WriteElementString("ZipDestination", zipDestination);
                     writer.WriteElementString("Pounds", package.PoundsAndOunces.Pounds.ToString());
                     writer.WriteElementString("Ounces", package.PoundsAndOunces.Ounces.ToString());
 
@@ -174,7 +180,12 @@ namespace DotNetShipping.ShippingProviders
             var rates = from item in document.Descendants("Postage")
                 group item by (string) item.Element("MailService")
                 into g
-                select new {Name = g.Key, TotalCharges = g.Sum(x => Decimal.Parse((string) x.Element("Rate"))), DeliveryDate = g.Select(x => (string) x.Element("CommitmentDate")).FirstOrDefault()};
+                select new { 
+                    Name = g.Key, 
+                    TotalCharges = g.Sum(x => Decimal.Parse((string)x.Element("Rate"))), 
+                    DeliveryDate = g.Select(x => (string)x.Element("CommitmentDate")).FirstOrDefault(), 
+                    ClassId = g.Select(x => (string)x.Attribute("CLASSID")).FirstOrDefault() 
+                };
 
             foreach (var r in rates)
             {
@@ -183,11 +194,11 @@ namespace DotNetShipping.ShippingProviders
 
                 if (r.DeliveryDate != null)
                 {
-                    AddRate(name, string.Concat("USPS ", name), r.TotalCharges, DateTime.Parse(r.DeliveryDate));
+                    AddRate(r.ClassId, string.Concat("USPS ", name), r.TotalCharges, DateTime.Parse(r.DeliveryDate));
                 }
                 else
                 {
-                    AddRate(name, string.Concat("USPS ", name), r.TotalCharges, DateTime.Now.AddDays(30));
+                    AddRate(r.ClassId, string.Concat("USPS ", name), r.TotalCharges, DateTime.Now.AddDays(30));
                 }
             }
 

@@ -15,6 +15,7 @@ namespace DotNetShipping
         private readonly List<USPSError> _serverErrors;
         public readonly Address DestinationAddress;
         public readonly Address OriginAddress;
+        private decimal _totalOrderAmount;
 
         public Shipment(Address originAddress, Address destinationAddress, List<Package> packages)
         {
@@ -36,6 +37,11 @@ namespace DotNetShipping
         public decimal TotalPackageWeight
         {
             get { return Packages.Sum(x => x.Weight); }
+        }
+        public decimal TotalOrderAmount
+        {
+            get { return _totalOrderAmount; }
+            set { _totalOrderAmount = value; }
         }
         public List<USPSError> ServerErrors
         {

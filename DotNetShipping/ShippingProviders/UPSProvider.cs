@@ -37,12 +37,14 @@ namespace DotNetShipping.ShippingProviders
         private const string PRODUCTION_RATES_URL = "https://onlinetools.ups.com/ups.app/xml/Rate";
         private AvailableServices _services = AvailableServices.All;
         private bool _useProduction = true;
+        private bool _useNegotiatedRates = false;
         private readonly string _licenseNumber;
         private readonly string _password;
         private readonly Hashtable _serviceCodes = new Hashtable(12);
         private readonly string _serviceDescription;
         private readonly int _timeout;
         private readonly string _userId;
+        private readonly string _shipperNumber;
 
         /// <summary>
         ///     Parameterless construction that pulls data directly from app.config
@@ -56,9 +58,11 @@ namespace DotNetShipping.ShippingProviders
             _password = appSettings["UPSPassword"];
             _timeout = DEFAULT_TIMEOUT;
             _serviceDescription = "";
+            _shipperNumber = "";
         }
 
-        public UPSProvider(string licenseNumber, string userId, string password) : this(licenseNumber, userId, password, DEFAULT_TIMEOUT)
+        public UPSProvider(string licenseNumber, string userId, string password)
+            : this(licenseNumber, userId, password, DEFAULT_TIMEOUT)
         {
         }
 
@@ -70,6 +74,7 @@ namespace DotNetShipping.ShippingProviders
             _password = password;
             _timeout = timeout;
             _serviceDescription = "";
+            _shipperNumber = "";
             LoadServiceCodes();
         }
 
@@ -81,6 +86,7 @@ namespace DotNetShipping.ShippingProviders
             _password = password;
             _timeout = DEFAULT_TIMEOUT;
             _serviceDescription = serviceDescription;
+            _shipperNumber = "";
             LoadServiceCodes();
         }
 
@@ -92,6 +98,19 @@ namespace DotNetShipping.ShippingProviders
             _password = password;
             _timeout = timeout;
             _serviceDescription = serviceDescription;
+            _shipperNumber = "";
+            LoadServiceCodes();
+        }
+
+        public UPSProvider(string licenseNumber, string userId, string password, int timeout, string serviceDescription, string shipperNumber)
+        {
+            Name = "UPS";
+            _licenseNumber = licenseNumber;
+            _userId = userId;
+            _password = password;
+            _timeout = timeout;
+            _serviceDescription = serviceDescription;
+            _shipperNumber = shipperNumber;
             LoadServiceCodes();
         }
 
@@ -109,63 +128,95 @@ namespace DotNetShipping.ShippingProviders
             get { return _useProduction; }
             set { _useProduction = value; }
         }
+        public bool UseNegotiatedRates
+        {
+            get { return _useNegotiatedRates; }
+            set { _useNegotiatedRates = value; }
+        }
 
         private byte[] BuildRatesRequestMessage()
         {
             Encoding utf8 = new UTF8Encoding(false);
             var writer = new XmlTextWriter(new MemoryStream(2000), utf8);
             writer.WriteStartDocument();
-            writer.WriteStartElement("AccessRequest");
+            writer.WriteStartElement("AccessRequest"); //<AccessRequest>
             writer.WriteAttributeString("lang", "en-US");
             writer.WriteElementString("AccessLicenseNumber", _licenseNumber);
             writer.WriteElementString("UserId", _userId);
             writer.WriteElementString("Password", _password);
             writer.WriteEndDocument();
             writer.WriteStartDocument();
-            writer.WriteStartElement("RatingServiceSelectionRequest");
+            
+            writer.WriteStartElement("RatingServiceSelectionRequest"); //RatingServiceSelectionRequest
             writer.WriteAttributeString("lang", "en-US");
-            writer.WriteStartElement("Request");
-            writer.WriteStartElement("TransactionReference");
+            
+            writer.WriteStartElement("Request");  //RatingServiceSelectionRequest/Request
+            
+            writer.WriteStartElement("TransactionReference");  //RatingServiceSelectionRequest/Request/TransactionReference
             writer.WriteElementString("CustomerContext", "Rating and Service");
             writer.WriteElementString("XpciVersion", "1.0001");
-            writer.WriteEndElement(); // </TransactionReference>
-            writer.WriteElementString("RequestAction", "Rate");
-            writer.WriteElementString("RequestOption", string.IsNullOrWhiteSpace(_serviceDescription) ? "Shop" : _serviceDescription);
+            writer.WriteEndElement();
+
+            writer.WriteElementString("RequestAction", "Rate"); //RatingServiceSelectionRequest/Request/RequestAction
+            writer.WriteElementString("RequestOption", string.IsNullOrWhiteSpace(_serviceDescription) ? "Shop" : _serviceDescription); //RatingServiceSelectionRequest/Request/RequestOption
             writer.WriteEndElement(); // </Request>
             writer.WriteStartElement("PickupType");
-            writer.WriteElementString("Code", "03");
+            writer.WriteElementString("Code", "01"); //RatingServiceSelectionRequest/PickupType/Code - 03 = Customer Counter, 01 = Daily Pickup
             writer.WriteEndElement(); // </PickupType>
+            writer.WriteStartElement("CustomerClassification");
+            writer.WriteElementString("Code", string.IsNullOrWhiteSpace(_shipperNumber) ? "01" : "00"); // 00 gets shipper number rates, 01 for daily rates, 04 = Retail Rates, 53 = Standard List Rates
+            writer.WriteEndElement(); // </CustomerClassification
             writer.WriteStartElement("Shipment");
             writer.WriteStartElement("Shipper");
+            if (!string.IsNullOrWhiteSpace(_shipperNumber))
+            {
+                writer.WriteElementString("ShipperNumber", _shipperNumber);
+            }
             writer.WriteStartElement("Address");
+            writer.WriteElementString("StateProvinceCode", Shipment.OriginAddress.State);
             writer.WriteElementString("PostalCode", Shipment.OriginAddress.PostalCode);
+            writer.WriteElementString("CountryCode", Shipment.OriginAddress.CountryCode);
             writer.WriteEndElement(); // </Address>
             writer.WriteEndElement(); // </Shipper>
             writer.WriteStartElement("ShipTo");
             writer.WriteStartElement("Address");
-            if (Shipment.DestinationAddress.IsUnitedStatesAddress() || Shipment.DestinationAddress.IsCanadaAddress())
-            {
-                writer.WriteElementString("PostalCode", Shipment.DestinationAddress.PostalCode);
-            }
+            writer.WriteElementString("ResidentialAddressIndicator", "");  //force residential for every quote
+            writer.WriteElementString("City", Shipment.DestinationAddress.City);
+            writer.WriteElementString("StateProvinceCode", Shipment.DestinationAddress.State);
+            writer.WriteElementString("PostalCode", Shipment.DestinationAddress.PostalCode);
             writer.WriteElementString("CountryCode", Shipment.DestinationAddress.CountryCode);
             writer.WriteEndElement(); // </Address>
             writer.WriteEndElement(); // </ShipTo>
+            writer.WriteStartElement("ShipFrom");
+            writer.WriteStartElement("Address");
+            writer.WriteElementString("City", Shipment.OriginAddress.City);
+            writer.WriteElementString("StateProvinceCode", Shipment.OriginAddress.State);
+            writer.WriteElementString("PostalCode", Shipment.OriginAddress.PostalCode);
+            writer.WriteElementString("CountryCode", Shipment.OriginAddress.CountryCode);
+            writer.WriteEndElement(); // </Address>
+            writer.WriteEndElement();// </ShipFrom>
             if (!string.IsNullOrWhiteSpace(_serviceDescription))
             {
                 writer.WriteStartElement("Service");
-                writer.WriteElementString("Code", _serviceDescription.ToUpsShipCode());
+                writer.WriteElementString("Code", _serviceDescription.ToUpsShipCode()); //page 40 of pdf
                 writer.WriteEndElement(); //</Service>
             }
             for (var i = 0; i < Shipment.Packages.Count; i++)
             {
                 writer.WriteStartElement("Package");
                 writer.WriteStartElement("PackagingType");
-                writer.WriteElementString("Code", "02");
+                writer.WriteElementString("Code", "02"); //page 41 of pdf 02=Package
                 writer.WriteEndElement(); //</PackagingType>
                 writer.WriteStartElement("PackageWeight");
                 writer.WriteElementString("Weight", Shipment.Packages[i].RoundedWeight.ToString());
+                writer.WriteStartElement("UnitOfMeasurement");
+                writer.WriteElementString("Code", "LBS");
+                writer.WriteEndElement();
                 writer.WriteEndElement(); // </PackageWeight>
                 writer.WriteStartElement("Dimensions");
+                writer.WriteStartElement("UnitOfMeasurement");
+                writer.WriteElementString("Code", "IN");
+                writer.WriteEndElement();
                 writer.WriteElementString("Length", Shipment.Packages[i].RoundedLength.ToString());
                 writer.WriteElementString("Width", Shipment.Packages[i].RoundedWidth.ToString());
                 writer.WriteElementString("Height", Shipment.Packages[i].RoundedHeight.ToString());
@@ -175,8 +226,17 @@ namespace DotNetShipping.ShippingProviders
                 writer.WriteElementString("CurrencyCode", "USD");
                 writer.WriteElementString("MonetaryValue", Shipment.Packages[i].InsuredValue.ToString());
                 writer.WriteEndElement(); // </InsuredValue>
+                writer.WriteStartElement("DeliveryConfirmation");
+                writer.WriteElementString("DCISType", "3"); //Valid values are: 1 - Delivery Confirmation; 2 - Delivery Confirmation Signature Required; 3 - Delivery Confirmation Adult Signature Required
+                writer.WriteEndElement(); // </DeliveryConfirmation>
                 writer.WriteEndElement(); // </PackageServiceOptions>
                 writer.WriteEndElement(); // </Package>
+            }
+            if (_useNegotiatedRates)
+            {
+                writer.WriteStartElement("RateInformation");
+                writer.WriteElementString("NegotiatedRatesIndicator", "");
+                writer.WriteEndElement();// </RateInformation>
             }
             writer.WriteEndDocument();
             writer.Flush();
@@ -190,7 +250,7 @@ namespace DotNetShipping.ShippingProviders
 
         public override void GetRates()
         {
-            var request = (HttpWebRequest) WebRequest.Create(RatesUrl);
+            var request = (HttpWebRequest)WebRequest.Create(RatesUrl);
             request.Method = "POST";
             request.Timeout = _timeout * 1000;
             // Per the UPS documentation, the "ContentType" should be "application/x-www-form-urlencoded".
@@ -203,7 +263,7 @@ namespace DotNetShipping.ShippingProviders
             var stream = request.GetRequestStream();
             stream.Write(bytes, 0, bytes.Length);
             stream.Close();
-            var response = (HttpWebResponse) request.GetResponse();
+            var response = (HttpWebResponse)request.GetResponse();
             ParseRatesResponseMessage(new StreamReader(response.GetResponseStream()).ReadToEnd());
             response.Close();
         }
@@ -236,13 +296,13 @@ namespace DotNetShipping.ShippingProviders
                 AvailableService service;
                 if (_serviceCodes.ContainsKey(name))
                 {
-                    service = (AvailableService) _serviceCodes[name];
+                    service = (AvailableService)_serviceCodes[name];
                 }
                 else
                 {
                     continue;
                 }
-                if (((int) _services & service.EnumValue) != service.EnumValue)
+                if (((int)_services & service.EnumValue) != service.EnumValue)
                 {
                     continue;
                 }
@@ -274,6 +334,11 @@ namespace DotNetShipping.ShippingProviders
                 if (date != "")
                 {
                     delivery = DateTime.Parse(date);
+                }
+                var negotiatedRate = rateNode.SelectSingleNode("NegotiatedRates/NetSummaryCharges/GrandTotal/MonetaryValue");
+                if (negotiatedRate != null) // check for negotiated rate
+                {
+                    totalCharges = Convert.ToDecimal(negotiatedRate.InnerText);
                 }
 
                 AddRate(name, description, totalCharges, delivery);
