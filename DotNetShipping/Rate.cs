@@ -25,6 +25,24 @@ namespace DotNetShipping
         }
 
         /// <summary>
+        ///     Creates a new instance of the <see cref="Rate" /> class.
+        /// </summary>
+        /// <param name="provider">The name of the provider responsible for this rate.</param>
+        /// <param name="providerCode">The name of the rate.</param>
+        /// <param name="name">A Name of the rate.</param>
+        /// <param name="totalCharges">The total cost of this rate.</param>
+        /// <param name="delivery">The guaranteed date and time of delivery for this rate.</param>
+        public Rate(string provider, string providerCode, string name, decimal totalCharges, DateTime delivery, string rateAsJson)
+        {
+            Provider = provider;
+            ProviderCode = providerCode;
+            Name = name;
+            TotalCharges = totalCharges;
+            GuaranteedDelivery = delivery;
+            RateAsJson = rateAsJson;
+        }
+
+        /// <summary>
         ///     The guaranteed date and time of delivery for this rate.
         /// </summary>
         public DateTime GuaranteedDelivery { get; set; }
@@ -44,6 +62,10 @@ namespace DotNetShipping
         ///     The total cost of this rate.
         /// </summary>
         public decimal TotalCharges { get; set; }
+        /// <summary>
+        ///     Returned Json from Service
+        /// </summary>
+        public string RateAsJson{ get; set; }
 
         public int CompareTo(object obj)
         {

@@ -15,6 +15,7 @@ namespace DotNetShipping.ShippingProviders
 
         public string Name { get; set; }
         public Shipment Shipment { get; set; }
+        //public string ResponseAsJson { get; set; }
 
         protected void AddError(USPSError error)
         {
@@ -24,6 +25,11 @@ namespace DotNetShipping.ShippingProviders
         protected void AddRate(string providerCode, string name, decimal totalCharges, DateTime delivery)
         {
             AddRate(new Rate(Name, providerCode, name, totalCharges, delivery));
+        }
+
+        protected void AddRate(string providerCode, string name, decimal totalCharges, DateTime delivery, string rateAsJson)
+        {
+            AddRate(new Rate(Name, providerCode, name, totalCharges, delivery, rateAsJson));
         }
 
         protected void AddRate(Rate rate)

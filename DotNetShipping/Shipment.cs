@@ -16,6 +16,7 @@ namespace DotNetShipping
         public readonly Address DestinationAddress;
         public readonly Address OriginAddress;
         private decimal _totalOrderAmount;
+        private string _responseAsJson;
 
         public Shipment(Address originAddress, Address destinationAddress, List<Package> packages)
         {
@@ -46,6 +47,11 @@ namespace DotNetShipping
         public List<USPSError> ServerErrors
         {
             get { return _serverErrors; }
+        }
+        public string ResponseAsJson
+        {
+            get { return _responseAsJson; }
+            set { _responseAsJson = value; }
         }
     }
 }

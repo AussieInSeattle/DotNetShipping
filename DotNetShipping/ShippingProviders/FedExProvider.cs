@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web.Services.Protocols;
 
 using DotNetShipping.RateServiceWebReference;
+using Newtonsoft.Json.Linq;
 
 namespace DotNetShipping.ShippingProviders
 {
@@ -32,6 +33,20 @@ namespace DotNetShipping.ShippingProviders
             {"INTERNATIONAL_PRIORITY", "FedEx International Priority"}
         };
         private readonly bool _useProduction = true;
+        private readonly RateRequestType _rateRequestType = RateRequestType.LIST;
+
+        //public enum FedExRateRequestType
+        //{
+
+        //    /// <remarks/>
+        //    ACCOUNT,
+
+        //    /// <remarks/>
+        //    LIST,
+
+        //    /// <remarks/>
+        //    PREFERRED,
+        //}
 
         /// <summary>
         ///     Paramaterless constructor that loads settings from app.config
@@ -82,6 +97,26 @@ namespace DotNetShipping.ShippingProviders
             _useProduction = useProduction;
         }
 
+        /// <summary>
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="password"></param>
+        /// <param name="accountNumber"></param>
+        /// <param name="meterNumber"></param>
+        /// <param name="useProduction"></param>
+        /// /// <param name="rateRequestType"></param>
+        public FedExProvider(string key, string password, string accountNumber, string meterNumber, bool useProduction, RateRequestType rateRequestType)
+        {
+            Name = "FedEx";
+
+            _key = key;
+            _password = password;
+            _accountNumber = accountNumber;
+            _meterNumber = meterNumber;
+            _useProduction = useProduction;
+            _rateRequestType = rateRequestType;
+        }
+
         private RateRequest CreateRateRequest()
         {
             // Build the RateRequest
@@ -114,6 +149,10 @@ namespace DotNetShipping.ShippingProviders
             {
                 // Call the web service passing in a RateRequest and returning a RateReply
                 var reply = service.getRates(request);
+                //log the output
+                //var replyAsJson = JObject.FromObject(reply);
+                //ResponseAsJson = replyAsJson.ToString();
+                Shipment.ResponseAsJson = JObject.FromObject(reply).ToString();
                 //
                 if (reply.HighestSeverity == NotificationSeverityType.SUCCESS || reply.HighestSeverity == NotificationSeverityType.NOTE || reply.HighestSeverity == NotificationSeverityType.WARNING)
                 {
@@ -129,6 +168,7 @@ namespace DotNetShipping.ShippingProviders
             {
                 Debug.WriteLine(e.Message);
             }
+            //return replyAsJsonString;
         }
 
         private void ProcessReply(RateReply reply)
@@ -139,7 +179,7 @@ namespace DotNetShipping.ShippingProviders
 
                 var key = rateReplyDetail.ServiceType.ToString();
                 var deliveryDate = rateReplyDetail.DeliveryTimestampSpecified ? rateReplyDetail.DeliveryTimestamp : DateTime.Now.AddDays(30);
-                AddRate(key, _serviceCodes[key], netCharge, deliveryDate);
+                AddRate(key, _serviceCodes[key], netCharge, deliveryDate, JObject.FromObject( rateReplyDetail).ToString(Newtonsoft.Json.Formatting.None));
             }
         }
 
@@ -211,7 +251,7 @@ namespace DotNetShipping.ShippingProviders
             SetPackageLineItems(request);
 
             request.RequestedShipment.RateRequestTypes = new RateRequestType[1];
-            request.RequestedShipment.RateRequestTypes[0] = RateRequestType.LIST;
+            request.RequestedShipment.RateRequestTypes[0] = _rateRequestType; // RateRequestType.LIST;
             request.RequestedShipment.PackageCount = Shipment.PackageCount.ToString();
         }
 
