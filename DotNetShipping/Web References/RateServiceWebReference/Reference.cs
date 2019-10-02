@@ -579,7 +579,8 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum ReturnedRateType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum ReturnedRateType
+    {
         
         /// <remarks/>
         PAYOR_ACCOUNT_PACKAGE,
@@ -622,7 +623,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum RatedWeightMethod {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum RatedWeightMethod {
         
         /// <remarks/>
         ACTUAL,
@@ -665,7 +666,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum MinimumChargeType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum MinimumChargeType {
         
         /// <remarks/>
         CUSTOMER,
@@ -720,7 +721,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum WeightUnits {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum WeightUnits {
         
         /// <remarks/>
         KG,
@@ -862,7 +863,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum RateDiscountType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum RateDiscountType {
         
         /// <remarks/>
         BONUS,
@@ -967,7 +968,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum RebateType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum RebateType {
         
         /// <remarks/>
         BONUS,
@@ -1066,7 +1067,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum SurchargeType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum SurchargeType {
         
         /// <remarks/>
         ADDITIONAL_HANDLING,
@@ -1265,7 +1266,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum SurchargeLevelType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum SurchargeLevelType {
         
         /// <remarks/>
         PACKAGE,
@@ -1336,7 +1337,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum TaxType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum TaxType {
         
         /// <remarks/>
         EXPORT,
@@ -1575,7 +1576,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum TrackingIdType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum TrackingIdType {
         
         /// <remarks/>
         EXPRESS,
@@ -1594,7 +1595,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum OversizeClassType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum OversizeClassType {
         
         /// <remarks/>
         OVERSIZE_1,
@@ -1730,7 +1731,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum EdtTaxType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum EdtTaxType {
         
         /// <remarks/>
         ADDITIONAL_TAXES,
@@ -1993,7 +1994,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum FreightClassType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum FreightClassType {
         
         /// <remarks/>
         CLASS_050,
@@ -2054,7 +2055,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum FreightChargeBasisType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum FreightChargeBasisType {
         
         /// <remarks/>
         CWT,
@@ -2167,7 +2168,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum FreightRateQuoteType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum FreightRateQuoteType {
         
         /// <remarks/>
         AUTOMATED,
@@ -2180,7 +2181,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum FreightBaseChargeCalculationType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum FreightBaseChargeCalculationType {
         
         /// <remarks/>
         LINE_ITEMS,
@@ -2838,7 +2839,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum PricingCodeType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum PricingCodeType {
         
         /// <remarks/>
         ACTUAL,
@@ -2942,7 +2943,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum SpecialRatingAppliedType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum SpecialRatingAppliedType {
         
         /// <remarks/>
         FIXED_FUEL_SURCHARGE,
@@ -2955,7 +2956,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum RateDimensionalDivisorType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum RateDimensionalDivisorType {
         
         /// <remarks/>
         COUNTRY,
@@ -3573,7 +3574,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum DistanceUnits {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum DistanceUnits {
         
         /// <remarks/>
         KM,
@@ -3768,7 +3769,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum ServiceType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum ServiceType {
         
         /// <remarks/>
         EUROPE_FIRST_INTERNATIONAL_PRIORITY,
@@ -3838,7 +3839,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum FreightServiceSchedulingType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum FreightServiceSchedulingType {
         
         /// <remarks/>
         LIMITED,
@@ -3854,7 +3855,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum DayOfWeekType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum DayOfWeekType {
         
         /// <remarks/>
         FRI,
@@ -4236,7 +4237,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum DelayLevelType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum DelayLevelType {
         
         /// <remarks/>
         CITY,
@@ -4264,7 +4265,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum DelayPointType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum DelayPointType {
         
         /// <remarks/>
         BROKER,
@@ -4286,7 +4287,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum CommitmentDelayType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum CommitmentDelayType {
         
         /// <remarks/>
         HOLIDAY,
@@ -4736,7 +4737,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum ServiceOptionType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum ServiceOptionType {
         
         /// <remarks/>
         FREIGHT_GUARANTEE,
@@ -4826,7 +4827,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum FreightGuaranteeType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum FreightGuaranteeType {
         
         /// <remarks/>
         GUARANTEED_DATE,
@@ -4839,7 +4840,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum SmartPostIndiciaType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum SmartPostIndiciaType {
         
         /// <remarks/>
         MEDIA_MAIL,
@@ -4861,7 +4862,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum TransitTimeType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum TransitTimeType {
         
         /// <remarks/>
         EIGHTEEN_DAYS,
@@ -5026,7 +5027,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum NotificationSeverityType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum NotificationSeverityType {
         
         /// <remarks/>
         ERROR,
@@ -5081,7 +5082,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum InternationalDocumentContentType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum InternationalDocumentContentType {
         
         /// <remarks/>
         DOCUMENTS_ONLY,
@@ -5094,7 +5095,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum RequiredShippingDocumentType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum RequiredShippingDocumentType {
         
         /// <remarks/>
         CANADIAN_B13A,
@@ -5452,7 +5453,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum PackagingType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum PackagingType {
         
         /// <remarks/>
         FEDEX_10KG_BOX,
@@ -5480,7 +5481,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum SignatureOptionType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum SignatureOptionType {
         
         /// <remarks/>
         ADULT,
@@ -5796,7 +5797,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum PriorityAlertEnhancementType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum PriorityAlertEnhancementType {
         
         /// <remarks/>
         PRIORITY_ALERT_PLUS,
@@ -5921,7 +5922,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum PackageSpecialServiceType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum PackageSpecialServiceType {
         
         /// <remarks/>
         ALCOHOL,
@@ -6154,7 +6155,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum RateTypeBasisType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum RateTypeBasisType {
         
         /// <remarks/>
         ACCOUNT,
@@ -6167,7 +6168,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum CodAddTransportationChargeBasisType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum CodAddTransportationChargeBasisType {
         
         /// <remarks/>
         COD_SURCHARGE,
@@ -6186,7 +6187,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum ChargeBasisLevelType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum ChargeBasisLevelType {
         
         /// <remarks/>
         CURRENT_PACKAGE,
@@ -6199,7 +6200,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum CodCollectionType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum CodCollectionType {
         
         /// <remarks/>
         ANY,
@@ -6318,7 +6319,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum TinType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum TinType {
         
         /// <remarks/>
         BUSINESS_NATIONAL,
@@ -6337,7 +6338,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum CodReturnReferenceIndicatorType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum CodReturnReferenceIndicatorType {
         
         /// <remarks/>
         INVOICE,
@@ -6562,7 +6563,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum DangerousGoodsAccessibilityType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum DangerousGoodsAccessibilityType {
         
         /// <remarks/>
         ACCESSIBLE,
@@ -6575,7 +6576,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum HazardousCommodityOptionType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum HazardousCommodityOptionType {
         
         /// <remarks/>
         HAZARDOUS_MATERIALS,
@@ -6597,7 +6598,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum DangerousGoodsPackingOptionType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum DangerousGoodsPackingOptionType {
         
         /// <remarks/>
         OVERPACK,
@@ -6704,7 +6705,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum HazardousContainerPackingType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum HazardousContainerPackingType {
         
         /// <remarks/>
         ALL_PACKED_IN_ONE,
@@ -6714,7 +6715,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum RadioactiveContainerClassType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum RadioactiveContainerClassType {
         
         /// <remarks/>
         EXCEPTED_PACKAGE,
@@ -7009,7 +7010,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum HazardousCommodityPackingGroupType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum HazardousCommodityPackingGroupType {
         
         /// <remarks/>
         DEFAULT,
@@ -7074,7 +7075,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum HazardousCommodityDescriptionProcessingOptionType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum HazardousCommodityDescriptionProcessingOptionType {
         
         /// <remarks/>
         INCLUDE_SPECIAL_PROVISIONS,
@@ -7155,7 +7156,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum HazardousCommodityQuantityType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum HazardousCommodityQuantityType {
         
         /// <remarks/>
         GROSS,
@@ -7214,7 +7215,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum HazardousCommodityLabelTextOptionType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum HazardousCommodityLabelTextOptionType {
         
         /// <remarks/>
         APPEND,
@@ -7384,7 +7385,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum RadioactivityUnitOfMeasure {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum RadioactivityUnitOfMeasure {
         
         /// <remarks/>
         BQ,
@@ -7409,7 +7410,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum PhysicalFormType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum PhysicalFormType {
         
         /// <remarks/>
         GAS,
@@ -7663,7 +7664,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum LinearUnits {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum LinearUnits {
         
         /// <remarks/>
         CM,
@@ -7709,7 +7710,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum CustomerReferenceType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum CustomerReferenceType {
         
         /// <remarks/>
         BILL_OF_LADING,
@@ -8016,7 +8017,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum RateElementBasisType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum RateElementBasisType {
         
         /// <remarks/>
         BASE_CHARGE,
@@ -8035,7 +8036,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum PhysicalPackagingType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum PhysicalPackagingType {
         
         /// <remarks/>
         BAG,
@@ -8348,7 +8349,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum ShippingDocumentDispositionType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum ShippingDocumentDispositionType {
         
         /// <remarks/>
         CONFIRMED,
@@ -8376,7 +8377,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum ShippingDocumentGroupingType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum ShippingDocumentGroupingType {
         
         /// <remarks/>
         CONSOLIDATED_BY_DOCUMENT_TYPE,
@@ -8482,7 +8483,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum EMailNotificationRecipientType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum EMailNotificationRecipientType {
         
         /// <remarks/>
         BROKER,
@@ -8501,7 +8502,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum ShippingDocumentEMailGroupingType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum ShippingDocumentEMailGroupingType {
         
         /// <remarks/>
         BY_RECIPIENT,
@@ -8594,7 +8595,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum ShippingDocumentImageType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum ShippingDocumentImageType {
         
         /// <remarks/>
         DPL,
@@ -8616,7 +8617,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum ShippingDocumentStockType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum ShippingDocumentStockType {
         
         /// <remarks/>
         OP_900_LG_B,
@@ -8748,7 +8749,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum CustomerImageUsageType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum CustomerImageUsageType {
         
         /// <remarks/>
         LETTER_HEAD,
@@ -8761,7 +8762,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum ImageId {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum ImageId {
         
         /// <remarks/>
         IMAGE_1,
@@ -9043,7 +9044,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum NaftaImporterSpecificationType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum NaftaImporterSpecificationType {
         
         /// <remarks/>
         IMPORTER_OF_RECORD,
@@ -9062,7 +9063,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum NaftaProducerSpecificationType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum NaftaProducerSpecificationType {
         
         /// <remarks/>
         AVAILABLE_UPON_REQUEST,
@@ -9188,7 +9189,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum LabelPrintingOrientationType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum LabelPrintingOrientationType {
         
         /// <remarks/>
         BOTTOM_EDGE_OF_TEXT_FIRST,
@@ -9201,7 +9202,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum LabelRotationType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum LabelRotationType {
         
         /// <remarks/>
         LEFT,
@@ -9420,7 +9421,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum RequestedShippingDocumentType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum RequestedShippingDocumentType {
         
         /// <remarks/>
         CERTIFICATE_OF_ORIGIN,
@@ -9501,7 +9502,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum AdditionalLabelsType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum AdditionalLabelsType {
         
         /// <remarks/>
         BROKER,
@@ -9746,7 +9747,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum BarcodeSymbologyType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum BarcodeSymbologyType {
         
         /// <remarks/>
         CODABAR,
@@ -10033,7 +10034,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum CustomLabelCoordinateUnits {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum CustomLabelCoordinateUnits {
         
         /// <remarks/>
         MILS,
@@ -10175,7 +10176,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum DocTabZoneJustificationType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum DocTabZoneJustificationType {
         
         /// <remarks/>
         LEFT,
@@ -10247,7 +10248,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum DocTabContentType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum DocTabContentType {
         
         /// <remarks/>
         BARCODED,
@@ -10388,7 +10389,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum LabelMaskableDataType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum LabelMaskableDataType {
         
         /// <remarks/>
         CUSTOMS_VALUE,
@@ -10425,7 +10426,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum SecondaryBarcodeType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum SecondaryBarcodeType {
         
         /// <remarks/>
         COMMON_2D,
@@ -10602,7 +10603,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum LabelFormatType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum LabelFormatType {
         
         /// <remarks/>
         COMMON2D,
@@ -10627,7 +10628,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum LabelStockType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum LabelStockType {
         
         /// <remarks/>
         PAPER_4X6,
@@ -10758,7 +10759,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum SmartPostAncillaryEndorsementType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum SmartPostAncillaryEndorsementType {
         
         /// <remarks/>
         ADDRESS_CORRECTION,
@@ -10901,7 +10902,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum PickupRequestType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum PickupRequestType {
         
         /// <remarks/>
         FUTURE_DAY,
@@ -10914,7 +10915,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum PickupRequestSourceType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum PickupRequestSourceType {
         
         /// <remarks/>
         AUTOMATION,
@@ -10973,7 +10974,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum DestinationControlStatementType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum DestinationControlStatementType {
         
         /// <remarks/>
         DEPARTMENT_OF_COMMERCE,
@@ -11056,7 +11057,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum B13AFilingOptionType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum B13AFilingOptionType {
         
         /// <remarks/>
         FEDEX_TO_STAMP,
@@ -11186,7 +11187,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum NaftaPreferenceCriterionCode {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum NaftaPreferenceCriterionCode {
         
         /// <remarks/>
         A,
@@ -11211,7 +11212,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum NaftaProducerDeterminationCode {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum NaftaProducerDeterminationCode {
         
         /// <remarks/>
         NO_1,
@@ -11230,7 +11231,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum NaftaNetCostMethodCode {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum NaftaNetCostMethodCode {
         
         /// <remarks/>
         NC,
@@ -11746,7 +11747,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum TaxesOrMiscellaneousChargeType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum TaxesOrMiscellaneousChargeType {
         
         /// <remarks/>
         COMMISSIONS,
@@ -11771,7 +11772,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum PurposeOfShipmentType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum PurposeOfShipmentType {
         
         /// <remarks/>
         GIFT,
@@ -11796,7 +11797,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum TermsOfSaleType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum TermsOfSaleType {
         
         /// <remarks/>
         CFR_OR_CPT,
@@ -11873,7 +11874,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum RecipientCustomsIdType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum RecipientCustomsIdType {
         
         /// <remarks/>
         COMPANY,
@@ -11935,7 +11936,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum CustomsOptionType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum CustomsOptionType {
         
         /// <remarks/>
         COURTESY_RETURN_LABEL,
@@ -12018,7 +12019,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum BrokerType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum BrokerType {
         
         /// <remarks/>
         EXPORT,
@@ -12275,7 +12276,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum ClearanceBrokerageType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum ClearanceBrokerageType {
         
         /// <remarks/>
         BROKER_INCLUSIVE,
@@ -12343,7 +12344,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum PaymentType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum PaymentType {
         
         /// <remarks/>
         SENDER,
@@ -12374,7 +12375,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum FreightOnValueType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum FreightOnValueType {
         
         /// <remarks/>
         CARRIER_RISK,
@@ -12387,7 +12388,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum RegulatoryControlType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum RegulatoryControlType {
         
         /// <remarks/>
         EU_CIRCULATION,
@@ -12462,7 +12463,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum VolumeUnits {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum VolumeUnits {
         
         /// <remarks/>
         CUBIC_FT,
@@ -12641,7 +12642,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum ShipmentSpecialServiceType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum ShipmentSpecialServiceType {
         
         /// <remarks/>
         BROKER_SELECT_OPTION,
@@ -12747,7 +12748,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum FreightShipmentRoleType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum FreightShipmentRoleType {
         
         /// <remarks/>
         CONSIGNEE,
@@ -12806,7 +12807,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum LiabilityCoverageType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum LiabilityCoverageType {
         
         /// <remarks/>
         NEW,
@@ -13075,7 +13076,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum FreightCollectTermsType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum FreightCollectTermsType {
         
         /// <remarks/>
         NON_RECOURSE_SHIPPER_SIGNED,
@@ -13327,7 +13328,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum CustomDeliveryWindowType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum CustomDeliveryWindowType {
         
         /// <remarks/>
         AFTER,
@@ -13467,7 +13468,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum UploadDocumentProducerType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum UploadDocumentProducerType {
         
         /// <remarks/>
         CUSTOMER,
@@ -13486,7 +13487,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum UploadDocumentType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum UploadDocumentType {
         
         /// <remarks/>
         CERTIFICATE_OF_ORIGIN,
@@ -13511,7 +13512,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum UploadDocumentIdProducer {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum UploadDocumentIdProducer {
         
         /// <remarks/>
         CUSTOMER,
@@ -13803,7 +13804,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum HomeDeliveryPremiumType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum HomeDeliveryPremiumType {
         
         /// <remarks/>
         APPOINTMENT,
@@ -13970,7 +13971,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum InternationalControlledExportType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum InternationalControlledExportType {
         
         /// <remarks/>
         DEA_036,
@@ -14102,7 +14103,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum PendingShipmentType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum PendingShipmentType {
         
         /// <remarks/>
         EMAIL,
@@ -14193,7 +14194,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum ReturnEMailAllowedSpecialServiceType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum ReturnEMailAllowedSpecialServiceType {
         
         /// <remarks/>
         SATURDAY_DELIVERY,
@@ -14284,7 +14285,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum ReturnType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum ReturnType {
         
         /// <remarks/>
         FEDEX_TAG,
@@ -14383,7 +14384,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum EMailNotificationEventType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum EMailNotificationEventType {
         
         /// <remarks/>
         ON_DELIVERY,
@@ -14402,7 +14403,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum EMailNotificationFormatType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum EMailNotificationFormatType {
         
         /// <remarks/>
         HTML,
@@ -14547,7 +14548,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum FedExLocationType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum FedExLocationType {
         
         /// <remarks/>
         FEDEX_EXPRESS_STATION,
@@ -14796,7 +14797,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum FlatbedTrailerOption {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum FlatbedTrailerOption {
         
         /// <remarks/>
         OVER_DIMENSION,
@@ -15249,7 +15250,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum DropoffType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum DropoffType {
         
         /// <remarks/>
         BUSINESS_SERVICE_CENTER,
@@ -15271,7 +15272,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum RateRequestType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum RateRequestType {
         
         /// <remarks/>
         ACCOUNT,
@@ -15287,7 +15288,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum EdtRequestType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum EdtRequestType {
         
         /// <remarks/>
         ALL,
@@ -15300,7 +15301,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum ShipmentOnlyFieldsType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum ShipmentOnlyFieldsType {
         
         /// <remarks/>
         DIMENSIONS,
@@ -15398,7 +15399,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum ExpressRegionCode {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum ExpressRegionCode {
         
         /// <remarks/>
         APAC,
@@ -15420,7 +15421,7 @@ namespace DotNetShipping.RateServiceWebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://fedex.com/ws/rate/v13")]
-    public enum CarrierCodeType {
+    [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] public enum CarrierCodeType {
         
         /// <remarks/>
         FDXC,

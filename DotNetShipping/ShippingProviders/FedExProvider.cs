@@ -192,6 +192,8 @@ namespace DotNetShipping.ShippingProviders
             request.RequestedShipment.Recipient.Address.StateOrProvinceCode = "";
             request.RequestedShipment.Recipient.Address.PostalCode = Shipment.DestinationAddress.PostalCode;
             request.RequestedShipment.Recipient.Address.CountryCode = Shipment.DestinationAddress.CountryCode;
+            request.RequestedShipment.Recipient.Address.Residential = true;
+            request.RequestedShipment.Recipient.Address.ResidentialSpecified = true;
         }
 
         private void SetOrigin(RateRequest request)
@@ -230,6 +232,12 @@ namespace DotNetShipping.ShippingProviders
                 request.RequestedShipment.RequestedPackageLineItems[i].InsuredValue.Amount = package.InsuredValue;
                 request.RequestedShipment.RequestedPackageLineItems[i].InsuredValue.AmountSpecified = true;
                 request.RequestedShipment.RequestedPackageLineItems[i].InsuredValue.Currency = "USD";
+                //for signature required
+                request.RequestedShipment.RequestedPackageLineItems[i].SpecialServicesRequested = new PackageSpecialServicesRequested();
+                request.RequestedShipment.RequestedPackageLineItems[i].SpecialServicesRequested.SignatureOptionDetail = new SignatureOptionDetail();
+                request.RequestedShipment.RequestedPackageLineItems[i].SpecialServicesRequested.SignatureOptionDetail.OptionType = SignatureOptionType.ADULT;
+                
+
                 i++;
             }
         }
@@ -243,6 +251,7 @@ namespace DotNetShipping.ShippingProviders
             request.RequestedShipment.DropoffTypeSpecified = true;
             request.RequestedShipment.PackagingType = PackagingType.YOUR_PACKAGING;
             request.RequestedShipment.PackagingTypeSpecified = true;
+            
 
             SetOrigin(request);
 
